@@ -1,0 +1,122 @@
+* {
+  cursor: default;
+}
+
+.flag-container {
+  background-color: rgb(20, 23, 30);
+  color: white;
+  margin-bottom: 10px;
+  width: 70%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.name-container {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: solid white;
+  border-width: 1px;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.flag-name {
+  font-family: monospace;
+  font-size: 20px;
+}
+
+.flag-description {
+  font-size: 18px;
+  font-family: "inter";
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.flag-rollout-percent {
+  font-size: 15px;
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.flag-allowed-countries {
+  font-size: 15px;
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+}
+
+.percent-image {
+  height: 15px;
+  filter: invert(0.5);
+  margin-right: 10px;
+}
+
+.world-image {
+  height: 16px;
+  filter: invert(0.5);
+  margin-right: 8px;
+}
+
+.edit-button {
+  height: 22px;
+  filter: invert(0.6);
+  margin-left: auto;
+  transition: filter 0.2s ease;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  filter: invert(1);
+}
+
+.countries {
+  display: flex;
+}
+
+.delete-button {
+  height: 22px;
+  filter: invert(0.6);
+  margin-left: 20px;
+  margin-right: 20px;
+  transition: filter 0.2s ease;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  filter: brightness(0) saturate(60%) invert(12%) sepia(100%) saturate(3000%) hue-rotate(0deg);
+}
+
+.flag-buttons {
+  display: flex;
+  margin-top: 40px;
+  justify-content: end;
+}
+
+.flag-button-reset, .flag-button-id {
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: arial;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.flag-button-reset {
+  background: transparent;
+  color: white;
+  border: solid white;
+  border-width: 1px;
+}
+
+.flag-button-id:hover {
+  background-color: rgb(199, 199, 199);
+}
+
+.flag-button-reset:hover {
+  background-color: rgb(50, 50, 50);
+}
