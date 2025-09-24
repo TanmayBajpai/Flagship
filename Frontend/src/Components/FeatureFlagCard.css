@@ -39,15 +39,23 @@
   font-family: monospace;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
   margin-top: 10px;
 }
 
 .flag-allowed-countries {
   font-size: 15px;
   font-family: monospace;
+  margin-top: 10px;
   display: flex;
   align-items: center;
+}
+
+.flag-improvement {
+  font-size: 15px;
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .percent-image {
@@ -60,6 +68,14 @@
   height: 16px;
   filter: invert(0.5);
   margin-right: 8px;
+}
+
+.graph-image,
+.feature-image,
+.control-image {
+  height: 16px;
+  filter: invert(0.5);
+  margin-right: 10px;
 }
 
 .edit-button {
@@ -97,7 +113,8 @@
   justify-content: end;
 }
 
-.flag-button-reset, .flag-button-id {
+.flag-button-reset,
+.flag-button-id {
   margin-left: 20px;
   padding: 10px;
   border-radius: 10px;
@@ -119,4 +136,16 @@
 
 .flag-button-reset:hover {
   background-color: rgb(50, 50, 50);
+}
+
+.lift-red {
+  color: rgb(255, 100, 100);
+}
+
+.lift-green {
+  color: rgb(100, 255, 100);
+}
+
+.lift-grey {
+  color: rgb(189, 189, 189);
 }

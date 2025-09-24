@@ -3,18 +3,21 @@ import "./FeatureFlagCard.css"
 
 function FeatureFlagCard({ flag, setChanged, setUpdateBox, setOverlay, setFlag, setShowFlagId }) {
 
-    const [enabled, setEnabled] = useState(true)
     const [name, setName] = useState("not found")
     const [description, setDescription] = useState("")
     const [rollout, setRollout] = useState(0)
     const [allowedCountries, setAllowedCountries] = useState([])
+    const [lift, setLift] = useState("Unavailable")
 
     useEffect(() => {
-        setEnabled(flag.enabled)
         setName(flag.flagName)
         setDescription(flag.description)
         setRollout(flag.rolloutPercent)
         setAllowedCountries(flag.allowedCountries)
+
+        if (flag.rolloutPercent > 0 && flag.withFlagSuccess > 0 && flag.withoutFlagSuccess) {
+            setLift(((flag.withFlagSuccess / flag.withoutFlagSuccess) * ((100 - flag.rolloutPercent) / flag.rolloutPercent)).toFixed(2))
+        }
     }, [flag])
 
     async function deleteFlag(id) {
@@ -80,9 +83,14 @@ function FeatureFlagCard({ flag, setChanged, setUpdateBox, setOverlay, setFlag, 
                 <div className="flag-allowed-countries">
                     <img src="/world.png" className="world-image"></img>
                     Allowed Countries: [{allowedCountries.length === 0 ?
-                        <p>ALL COUNTRIES ALLOWED</p> :
+                        <div>ALL COUNTRIES ALLOWED</div> :
                         <div className="countries">{allowedCountries.join(", ")}</div>
                     }]
+                </div>
+
+                <div className="flag-improvement">
+                    <img src="/graph.png" className="graph-image"></img>
+                    Success Rate Ratio (Feature vs Control): [{lift}]
                 </div>
 
                 <div className="flag-buttons">

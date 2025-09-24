@@ -38,4 +38,10 @@ public class FeatureFlag {
 
     @Column(nullable = false)
     private String owner;
+
+    @Column(nullable = false)
+    private int withFlagSuccess;
+
+    @Column(nullable = false)
+    private int withoutFlagSuccess;
 }

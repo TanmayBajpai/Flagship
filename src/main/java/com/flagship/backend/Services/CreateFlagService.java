@@ -65,6 +65,8 @@ public class CreateFlagService {
         featureFlag.setAllowedCountries(allowedCountries);
         featureFlag.setOwner(user);
         featureFlag.setSeed(seed);
+        featureFlag.setWithFlagSuccess(0);
+        featureFlag.setWithoutFlagSuccess(0);
 
         featureFlagRepository.save(featureFlag);
     }
